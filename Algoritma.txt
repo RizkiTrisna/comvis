@@ -1,0 +1,1 @@
+Tresholding > labelling per object > select one > save that size of pixel > find the second selected > save that size of pixel > compare both
