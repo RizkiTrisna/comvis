@@ -1,6 +1,7 @@
 1. Logika Image Processing:
 
 -Set direktori File Gambar asli
+- Compress gambar ke pixel yang dibuat patokan untuk dibandingkan dengan gambar kedua
 -Tampilkan gambar asli ke gui
 
 - Proses grayscale gambar

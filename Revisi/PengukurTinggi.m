@@ -4,7 +4,7 @@ workspace;
 fontSize = 25;
 %================================ Set File Gambar =======================================
 
-namaFile_1 = 'bunga1.jpg';
+namaFile_1 = 'gambar2.jpeg';
 rgbImage_1 = imread(namaFile_1);
 [row, col, warna] = size(rgbImage_1);
 
@@ -44,19 +44,17 @@ set(gcf, 'Units', 'Normalized', 'OuterPosition', [0 0.05 1 0.95]); % mengatur lo
 
 grayImage_1=double(grayImage_1);
 tot=0;
-[a,b]=size(grayImage_2);
+[a,b]=size(grayImage_1);
 tresholdImage_1=zeros(a,b);
+
 for i=1:a
     for j=1:b
             tresholdImage_1(i,j)=0;
         end
 end
-for i=1:a
-    for j=1:b
-        tot=tot+grayImage_1(i,j);
-    end
-end
-thr=tot/(a*b);
+
+thr=75;
+disp(thr)
 for i=1:a
     for j=1:b
         if grayImage_1(i,j) > thr
@@ -66,7 +64,7 @@ for i=1:a
         end
     end
 end
-
+disp(grayImage_1);
 subplot(2,5,3);
 imshow(tresholdImage_1, []);
 axis on;
@@ -113,7 +111,7 @@ hold on;
 
 %================================ Set File Gambar =======================================
 
-namaFile_2 = 'bunga.png';
+namaFile_2 = 'gambar1.jpeg';
 rgbImage_2 = imread(namaFile_2);
 [row, col, warna] = size(rgbImage_2);
 
@@ -160,12 +158,7 @@ for i=1:a
             tresholdImage_2(i,j)=0;
         end
 end
-for i=1:a
-    for j=1:b
-        tot=tot+grayImage_2(i,j);
-    end
-end
-thr=tot/(a*b);
+thr=60;
 for i=1:a
     for j=1:b
         if grayImage_2(i,j) > thr
@@ -222,5 +215,13 @@ hold on;
 sup = suptitle('Pengukuran Tinggi Suatu Benda');
 set(sup,'FontSize',30)
 
-fprintf('%s dari gambar 1 adalah %d \n','Tinggi',tinggi_1);
-fprintf('%s dari gambar 2 adalah %d \n','Tinggi',tinggi_2);
+%================ Penerapan Rumus ===================
+aTs = 10; %Asumsi
+aPx = double(tinggi_1);
+bPx = double(tinggi_2);
+
+bTs = int32((aTs/aPx) * bPx);
+fprintf('%s yang diambil dari gambar 1 adalah %d \n','Tinggi pixel (aPx) ',aPx);
+fprintf('%s yang diambil dari gambar 2 adalah %d \n','Tinggi pixel (bPx)',bPx);
+fprintf('%s dari gambar 1 adalah %d \n','Asumsi tinggi sebenarnya (aTs) ',aTs);
+fprintf('%s dari gambar 2 adalah %d \n','Sehingga tinggi sebenarnya (bTs) ',bTs);
