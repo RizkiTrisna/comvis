@@ -19,7 +19,6 @@ set(gcf, 'Units', 'Normalized', 'OuterPosition', [0 0.05 1 0.95]); % mengatur lo
 
 %============================== Gambar 2 / Grayscale ==================================
 
-
 R = rgbImage_1(:,:,1);
 G = rgbImage_1(:,:,2);
 B = rgbImage_1(:,:,3);
@@ -46,12 +45,6 @@ grayImage_1=double(grayImage_1);
 tot=0;
 [a,b]=size(grayImage_1);
 tresholdImage_1=zeros(a,b);
-
-for i=1:a
-    for j=1:b
-            tresholdImage_1(i,j)=0;
-        end
-end
 
 thr=75;
 disp(thr)
@@ -153,11 +146,7 @@ grayImage_2=double(grayImage_2);
 tot=0;
 [a,b]=size(grayImage_2);
 tresholdImage_2=zeros(a,b);
-for i=1:a
-    for j=1:b
-            tresholdImage_2(i,j)=0;
-        end
-end
+
 thr=60;
 for i=1:a
     for j=1:b
