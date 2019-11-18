@@ -1,0 +1,12 @@
+Koreksi dari kelompok lain:
+	Alur Logikanya jalannya program harus paham
+	Harus bisa mengetik ulang kodingan yang dipresentasikan
+	Data yang diuiji usahakan banyak
+	GUI yang dibuat harus sudah layak untuk aplikasi
+	Komputer visionnya harus layak
+	Penerapan machine learning lebih dilirik bapaknya
+Koreksi dari kelompok sendiri:
+	GUI Belum jadi
+	Kode program masih belum paham sepenuhnya
+Task yang belum dikerjakan:
+	GUI

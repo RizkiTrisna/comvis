@@ -1,0 +1,28 @@
+1. Logika Image Processing:
+
+-Set direktori File Gambar asli
+- Compress gambar ke pixel yang dibuat patokan untuk dibandingkan dengan gambar kedua
+-Tampilkan gambar asli ke gui
+
+- Proses grayscale gambar
+- Tampilkan hasil grayscale
+
+- Proses Tresholding gambar
+- Tampilkan hasil Thresholding
+
+- Proses bounding box gambar
+- Tampilkan hasil bounding box
+
+2. Hasil yang diambil didalam perhitungan:
+Variabel:
+aPx = tinggi pixel objek A
+bPx = tinggi pixel objek B
+aTs = Tinggi sebenarnya objek A
+bTs = Tinggi sebenarnya objek B
+
+Dengan menggunakan Rumus:
+bTs = aTs/aPx * bPx
+(dengan asumsi jarak kedua objek dari kamera sama dan tidak mengalami proyeksi gambar)
+
+Didapatkan hasil:
+bTs = Tinggi sebenarnya objek B
