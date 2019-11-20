@@ -13,16 +13,20 @@
 - Proses bounding box gambar
 - Tampilkan hasil bounding box
 
+- Gambar pertama akan dibounding box sehingga dapat di crop otomatis
+- Gambar kedua akan dicrop secara manual untuk meningkatkan akurasi
+- Perbandingan kedua gambar akan dilakukan dengan rumus ini:
+
 2. Hasil yang diambil didalam perhitungan:
 Variabel:
-aPx = tinggi pixel objek A
-bPx = tinggi pixel objek B
-aTs = Tinggi sebenarnya objek A
-bTs = Tinggi sebenarnya objek B
+aPx = tinggi pixel objek A / Tinggi pixel benda yang sebenarnya yang akan diukur
+bPx = tinggi pixel objek B / Tinggi pixel benda yang sebenarnya yang dijadikan parameter
+aTs = Tinggi sebenarnya objek A / benda yang akan diukur
+bTs = Tinggi sebenarnya objek B / benda yang dijadikan parameter
 
 Dengan menggunakan Rumus:
-bTs = aTs/aPx * bPx
+aTs = bTs/bPx * aPx
 (dengan asumsi jarak kedua objek dari kamera sama dan tidak mengalami proyeksi gambar)
 
 Didapatkan hasil:
-bTs = Tinggi sebenarnya objek B
+aTs = Tinggi sebenarnya objek B
