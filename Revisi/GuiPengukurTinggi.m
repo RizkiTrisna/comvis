@@ -22,7 +22,7 @@ function varargout = GuiPengukurTinggi(varargin)
 
 % Edit the above text to modify the response to help GuiPengukurTinggi
 
-% Last Modified by GUIDE v2.5 12-Nov-2019 06:14:50
+% Last Modified by GUIDE v2.5 19-Nov-2019 09:41:01
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -84,9 +84,14 @@ imA = imread(fullfile(pathname,filename));
 axes(handles.axes1);
 imshow(imA, []);
 
-imB = imcrop(imA);
+imBSementara = imcrop(imA);
+axes(handles.axes2);
+imshow(imBSementara, []);
+
+imB = imcrop(imBSementara);
 axes(handles.axes2);
 imshow(imB, []);
+
 
 %imC = imcrop(imB);
 %axes(handles.axes3);
@@ -200,7 +205,7 @@ grayA=double(grayA);
 [a,b]=size(grayA);
 tresholdA=zeros(a,b);
 
-thrA=75;
+thrA=125;
 for i=1:a
     for j=1:b
         if grayA(i,j) > thrA
@@ -241,7 +246,7 @@ grayB=double(grayB);
 [c,d]=size(grayB);
 tresholdB=zeros(c,d);
 
-thr=125;
+thr=40;
 for i=1:c
     for j=1:d
         if grayB(i,j) > thr
@@ -263,6 +268,10 @@ hasilB =imcrop(imB,boundingBoxB);
 tinggiB = size(hasilB,1);
 figure, imshow(hasilB);
 
+%Menampilkan gambar setelah diolah
+
+axes(handles.axes2);
+imshow(hasilB, []);
 
 bTs = str2double(get(handles.ed_tinggi_a, 'String'));
 fprintf('%s Edittext %d \n',' Tes ', bTs);
@@ -282,5 +291,3 @@ fprintf('%s adalah %d \n','Asumsi tinggi sebenarnya dari parameter(bTs) ',bTs);
 set(handles.txt_bts, 'string', bTs);
 fprintf('%s dari gambar 1 adalah %d \n','Tinggi sebenarnya (aTs) ',aTs);
 set(handles.txt_ats, 'string', aTs);
-
-
